@@ -35,17 +35,22 @@ function addExpense(event) {
 
         let numberExpense = input;
         let reasonExpense = "";
+        //to check if there is a char other then "," or "."
+        let numberExpenseWithoutKomma = numberExpense.replace(/,/g, "")
+        let numberExpenseWithoutKommaDot = numberExpenseWithoutKomma.replace(".", "");
+        console.log(numberExpenseWithoutKommaDot);
+        console.log(numberExpenseWithoutKomma);
 
         if (input.indexOf(" ") != -1) {
             //wenn leerzeichen
             numberExpense = (input.substring(0, input.indexOf(" "))).replace(/,/g, ".");
-            if (numberExpense.match(/^\d+$/) == null) {
+            if (numberExpenseWithoutKommaDot.match(/^\d+$/) == null) {
                 expenseInput.value = "";
                 return;
             }
             reasonExpense = input.substring(input.indexOf(" ") + 1, input.length);
         } else {
-            if (numberExpense.match(/^\d+$/) != null) {
+            if (numberExpenseWithoutKommaDot.match(/^\d+$/) != null) {
                 numberExpense = input.replace(/,/g, ".");
             } else {
                 expenseInput.value = "";
