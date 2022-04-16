@@ -31,7 +31,8 @@ form {
 }
 
 form {
-    min-height: 3vh
+    min-height: 3vh;
+    margin: 5px auto;
 }
 
 .headline {
@@ -48,13 +49,14 @@ form {
 form input,
 form button {
     padding: 0.5rem;
-    font-size: 2rem;
+    font-size: 1rem;
     background-color: white;
     border: none;
+
 }
 
 input {
-    width: 50px;
+    max-width: 50%;
 }
 
 form button {
