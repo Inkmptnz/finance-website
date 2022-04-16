@@ -38,13 +38,13 @@ function addExpense(event) {
 		//to check if there is a char other then "," or "."
 		let numberExpenseWithoutKomma = numberExpense.replace(/,/g, "");
 		let numberExpenseWithoutKommaDot = numberExpenseWithoutKomma.replace(".", "");
-		console.log(numberExpenseWithoutKommaDot);
-		console.log(numberExpenseWithoutKomma);
 
 		if (input.indexOf(" ") != -1) {
 			//wenn leerzeichen
 			numberExpense = input.substring(0, input.indexOf(" ")).replace(/,/g, ".");
-			if (numberExpenseWithoutKommaDot.match(/^\d+$/) == null) {
+			console.log(numberExpense + ".");
+			let numberExpenseWithoutKommaDotSpace = numberExpenseWithoutKommaDot.substring(0, input.indexOf(" ") - 1);
+			if (numberExpenseWithoutKommaDotSpace.match(/^\d+$/) == null) {
 				expenseInput.value = "";
 				return;
 			}
