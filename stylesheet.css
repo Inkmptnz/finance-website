@@ -53,6 +53,10 @@ form button {
     border: none;
 }
 
+input {
+    width: 50px;
+}
+
 form button {
     background: rgb(62, 77, 96);
     color: white;
