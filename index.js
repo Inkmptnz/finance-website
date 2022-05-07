@@ -40,10 +40,10 @@ function addExpense(event) {
 		let numberExpenseWithoutKommaDot = numberExpenseWithoutKomma.replace(".", "");
 
 		if (input.indexOf(" ") != -1) {
+			console.log("reason");
 			//wenn leerzeichen
 			numberExpense = input.substring(0, input.indexOf(" ")).replace(/,/g, ".");
-			console.log(numberExpense + ".");
-			let numberExpenseWithoutKommaDotSpace = numberExpenseWithoutKommaDot.substring(0, input.indexOf(" ") - 1);
+			let numberExpenseWithoutKommaDotSpace = numberExpenseWithoutKommaDot.substring(0, numberExpenseWithoutKommaDot.indexOf(" "));
 			if (numberExpenseWithoutKommaDotSpace.match(/^\d+$/) == null) {
 				expenseInput.value = "";
 				return;
